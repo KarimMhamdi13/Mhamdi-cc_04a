@@ -20,3 +20,15 @@ for (let p of products) {
   p.promoPrice = (p.price * (1 - discount)).toFixed(2);
 }
 
+let customerType = ["regular", "student", "senior"];
+
+let extraDiscount;
+  if (customerType === "student") {
+    extraDiscount = 0.05; 
+  } else if (customerType === "senior") {
+    extraDiscount = 0.07;
+  } else {
+    extraDiscount = 0; 
+  }
+
+  
