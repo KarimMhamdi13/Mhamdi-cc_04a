@@ -31,4 +31,19 @@ let extraDiscount;
     extraDiscount = 0; 
   }
 
-  
+for (let i = 1; i <= 3; i++) {
+  let subtotal = 0;
+
+  for (let item of products) {
+    if (item.inventory > 0) {
+      subtotal += item.price;
+      item.inventory--;
+    }
+  }
+
+  let customerType = customerType[i - 1];
+  let extraDiscount = discounts[customerType];
+  let finalTotal = subtotal * (1 - extraDiscount);
+
+  console.log(`Customer ${i} (${customerType}) total: $${finalTotal.toFixed(2)}`);
+}
