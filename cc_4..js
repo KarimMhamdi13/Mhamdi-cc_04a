@@ -8,3 +8,15 @@ const products = [
   { name: "Loaf of Bread", category: "Groceries", price: 3.99, inventory: 47 },
 ];
 
+for (let p of products) {
+  let discount = 0;
+  switch (p.category) {
+    case "Electronics": discount = 0.20; break;
+    case "Apparel":     discount = 0.15; break;
+    case "Groceries":
+    case "Household":   discount = 0.10; break;
+    default: discount = 0; break;
+  }
+  p.promoPrice = (p.price * (1 - discount)).toFixed(2);
+}
+
